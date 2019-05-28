@@ -47,7 +47,8 @@ The first thing we need to is create a folder that will contain Boing and Creati
 
 Let's clone the Boing and Creative Engine repos:
 
-    mkdir boing-game/                                          # Whould be within ~/projects or similar
+    # Would be within ~/projects or similar
+    mkdir boing-game/     
     cd boing-game/
     git clone git@github.com:ModusCreateOrg/boing.git
     git clone git@github.com:ModusCreateOrg/creative-engine.git
