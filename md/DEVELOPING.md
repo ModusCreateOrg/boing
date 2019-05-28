@@ -76,11 +76,12 @@ brew install
 - [ ] Build and run Boing
 ```    
 # Run these commands command from boing/
-mkdir build                    # Create build directory
-cd build                       
-cmake ..                       # Execute Cmake and prepare for build
-make -j 4                      # Four threads. Change to whatever you wish for faster compilation
-open boing.app                 # Run Boing
+make rcomp resources    # Build necessary tooling & resources binary
+mkdir build             # Create build directory
+cd build                   
+cmake ..                # Execute Cmake and prepare for build
+make -j 4               # Four threads. Change to whatever you wish for faster compilation
+open boing.app          # Run Boing
 ```
 
 ### Linux (Debian based)
@@ -91,11 +92,11 @@ sudo apt-get install libsdl2-dev libsdl2-image-dev cmake g++ -y
 - [ ] Build Boing
 ```    
 # Run this command from boing/
-make resources                 # Generates src/Resources.bin binary file to be included in our program
-mkdir build                    # Create build directory
+make resources       # Generates src/Resources.bin binary file to be included in our program
+mkdir build          # Create build directory
 cd build                       
-cmake ..                       # Execute Cmake and prepare for build
-make -j 4                      # Four threads. Change to whatever you wish for faster compilation
+cmake ..             # Execute Cmake and prepare for build
+make -j 4            # Four threads. Change to whatever you wish for faster compilation
 ./boing
 ```
 ### Raspberry Pi
@@ -119,8 +120,11 @@ cp sdkconfig.mac sdkconfig
 # From within boing/
 # *IF* you are prompted by the build system to say yes or no to any configura†ion changes, 
 # choose the default (press ENTER).
-make recoures
-make -j 4 flash   #Assuming you have four CPU cores to compile
+make rcomp resources    # Build necessary tooling & resources binary
+make -j 4 flash         # Assuming you have four CPU cores to compile
+
+# *IF* you are prompted by the build system to say yes or no to any configura†ion changes, 
+# choose the default (press ENTER).
 ```
 
 ## Additional information
