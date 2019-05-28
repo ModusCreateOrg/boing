@@ -61,7 +61,7 @@ brew install
 ```
 - [ ] Build and run Boing
 ```    
-# Run this command from boing/
+# Run these commands command from boing/
 mkdir build                    # Create build directory
 cd build                       
 cmake ..                       # Execute Cmake and prepare for build
