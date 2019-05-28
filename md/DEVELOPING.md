@@ -43,7 +43,7 @@ The first thing we need to is create a folder that will contain Boing and Creati
        |-boing-game/
             |-creative-engine/      # Source Creative Engine
             |-boing/                # Source for Boing
-                |-creative-engine/  # Symbolic Link to the above directory
+                |-creative-engine/  # Symbolic Link to ../creative-engine/
 
 Let's clone the Boing and Creative Engine repos:
 
