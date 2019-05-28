@@ -1,17 +1,16 @@
 
 # Developing
-This document's purpose is to provide a high-level understanding of how Brickout works. Programmers wishing to get involved should review our [contribution](./CONTRIBUTING.md) guidelines as well as have a decent understanding of C++ and build tools. Having some knowledge of SOCs, such as the [ESP32-WROVER](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-wrover-kit.html) would also be very helpful. 
+This document's purpose is to provide a high-level understanding of how Boing works. Programmers wishing to get involved should review our [contribution](./CONTRIBUTING.md) guidelines as well as have a decent understanding of C++ and build tools. Having some knowledge of SOCs, such as the [ESP32-WROVER](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-wrover-kit.html) would also be very helpful. 
+Boing is a cross-platform a block-breaking game developed by [Modus Create](https://moduscreate.com) and its sole puprose is to demonstrate how to use [creative engine](https://github.com/moduscreateorg/creative-engine). Boing runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux.
 
-## How Brickout works
-Brickout is a cross-platform a puzzle game created by [Modus Create](https://moduscreate.com) to demonstrate how to use [Creative Engine](https://github.com/ModusCreateOrg/creative-engine). Brickout runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux. 
 
-![brickout-gameplay.gif](./readme-images/brickout-gameplay.gif)
+## How to Play
+Genus is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
 
-The following visualization depicts the layers of the various libraries at play.
-![brickout-block-diagram](./readme-images/brickout-block-diagram.jpg)
+![boing-gameplay.gif](./img/boing-gameplay.gif)
 
 #### All platforms
-[Brickout](https://github.com/moduscreateorg/brickout) this game.\
+[Boing](https://github.com/moduscreateorg/boing) this game.\
 [Creative Engine](https://github.com/ModusCreateOrg/creative-engine) is the game engine developed by Modus Create. It implements LibXMP, SDL2, ESP-IDF (Audio, Video and Input drivers).\
 [LibXMP](http://xmp.sourceforge.net/) is a fantastic cross-platform library for playing music using the [Xtended Module (XM)](https://en.wikipedia.org/wiki/XM_(file_format)) format and also has additional functionality to play sound effects.\
  
@@ -28,25 +27,25 @@ The following visualization depicts the layers of the various libraries at play.
 Let's get setup for desktop and device development. To do so, we'll need to ensure that we have the right libraries and tools installed.
 
 We're going to get setup in three phases:
-1. Clone Brickout and Creative Engine
+1. Clone Boing and Creative Engine
 2. Install supporting desktop libraries and tools
 3. Install ESP IDF toolchain (this is only needed if you want to program an ODROID GO)
 
-## Clone Brickout and Creative Engine
-The first thing we need to is create a folder that will contain Brickout and Creative engine. When we're done, the folder struction will look similar to the following.
+## Clone Boing and Creative Engine
+The first thing we need to is create a folder that will contain Boing and Creative engine. When we're done, the folder struction will look similar to the following.
 
     projects/
         |-creative-engine/      # Source Creative Engine
-        |-brickout/             # Source for Brickout
+        |-boing/             # Source for Boing
             |-creative-engine/  # Symbolic Link to the above directory
 
-Let's clone the Brickout and Creative Engine repos:
+Let's clone the Boing and Creative Engine repos:
 
-    mkdir brickout-game/                                          # Whould be within ~/projects or similar
-    cd brickout-game/
-    git clone git@github.com:ModusCreateOrg/brickout.git
+    mkdir boing-game/                                          # Whould be within ~/projects or similar
+    cd boing-game/
+    git clone git@github.com:ModusCreateOrg/boing.git
     git clone git@github.com:ModusCreateOrg/creative-engine.git
-    ln -s creative-engine/ brickout/creative-engine               # Create Symbolic Link
+    ln -s creative-engine/ boing/creative-engine               # Create Symbolic Link
    
 ## Install dependencies
 
@@ -56,17 +55,17 @@ Let's clone the Brickout and Creative Engine repos:
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 - [ ] Install final dependencies via HomeBrew
 ```    
-# Run this command from brickout/
+# Run this command from boing/
 brew install
 ```
-- [ ] Build and run Brickout
+- [ ] Build and run Boing
 ```    
-# Run this command from brickout/
+# Run this command from boing/
 mkdir build                    # Create build directory
 cd build                       
 cmake ..                       # Execute Cmake and prepare for build
 make -j 4                      # Four threads. Change to whatever you wish for faster compilation
-open brickout.app              # Run Brickout
+open boing.app                 # Run Boing
 ```
 
 ### Linux (Debian based)
@@ -74,15 +73,26 @@ open brickout.app              # Run Brickout
 ```
 sudo apt-get install libsdl2-dev libsdl2-image-dev cmake g++ -y
 ```
-- [ ] Build and run Brickout
+- [ ] Build Boing
 ```    
-# Run this command from brickout/
+# Run this command from boing/
+make resources                 # Generates src/Resources.bin binary file to be included in our program
 mkdir build                    # Create build directory
 cd build                       
 cmake ..                       # Execute Cmake and prepare for build
 make -j 4                      # Four threads. Change to whatever you wish for faster compilation
-./brickout                     # Run Brickout
+./boing
 ```
+### Raspberry Pi
+
+Genus is tested on Raspbian Stretch (9.6) on the Raspberry Pi 2B+ and 3B+. You will need about 2GB of space in /tmp and about 2GB of space in /home to build this.
+
+The game will run very slowly without enabling the OpenGL desktop driver. You can enable it by running `sudo raspbi-config` and choosing _Advanced Options / GL Driver / GL (Full KMS)_. The game will run very slowly without enabling the OpenGL desktop driver. You can enable it by running `sudo raspbi-config` and choosing _Advanced Options / GL Driver / GL (Full KMS)_. See this site for complete instructions:  [https://eltechs.com/how-to-enable-opengl-on-raspberry-pi/](https://eltechs.com/how-to-enable-opengl-on-raspberry-pi/).
+
+
+
+
+
 
 ## ODROID GO/ESP32
 - [ ] Follow the [setup-toolchain](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/#setup-toolchain) instructions for the ESP IDF. Be sure to follow them thorougly! 
@@ -93,9 +103,12 @@ cp sdkconfig.linux sdkconfig
 # macOS ONLY
 cp sdkconfig.mac sdkconfig
 ```
-- [ ] Build and run brickout 
+- [ ] Build and run Boing 
 ```
-# From within brickout/
+# From within boing/
+# *IF* you are prompted by the build system to say yes or no to any configura†ion changes, 
+# choose the default (press ENTER).
+make recoures
 make -j 4 flash   #Assuming you have four CPU cores to compile
 ```
 

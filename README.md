@@ -6,9 +6,13 @@ Brickout is a cross-platform a block-breaking game developed by [Modus Create](h
 
 
 ## How to Play
-Genus is a simple game where you have to outsmart your AI apponent and land the ball behind his paddle. 
+Biong is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
 
-![brickout-gameplay.gif](./readme-images/brickout-gameplay.gif)
+![brickout-gameplay.gif](md/img/boing-gameplay.gif)
+
+
+## Getting started
+To build Boing, please follow the [Getting Started](./md/DEVELOPING.md#getting-started) in our [developer guide](./md/DEVELOPING.md).
 
 
 ## Keymap for computer-based players:
@@ -29,6 +33,7 @@ Genus is a simple game where you have to outsmart your AI apponent and land the 
 | Key(s) | Description |
 | --- | --- |
 |`↑ ↓` | Moves the paddle |
+|`2` | Mute / Un-mute sounds |
 
 
 ## License
