@@ -58,8 +58,16 @@ Let's clone the Boing and Creative Engine repos:
 
 ### macOS
 - [ ] Install [XCode](https://developer.apple.com/xcode/)
-- [ ] Intall [Homebrew](https://brew.sh) 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+```
+xcode-select --install
+``` 
+  
+- [ ] Install [Homebrew](https://brew.sh)
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+```
 - [ ] Install final dependencies via HomeBrew
 ```    
 # Run this command from boing/
