@@ -13,8 +13,10 @@ Boing is a simple game where you have to outsmart your AI opponent and land the 
 
 ![boing-gameplay.gif](./img/boing-gameplay.gif)
 
-#### All platforms
-[Boing](https://github.com/moduscreateorg/boing) this game.\
+The following is a list of dependencies for each platform.
+
+### Dependencies (All platforms)
+[Boing](https://github.com/moduscreateorg/boing), this game.\
 [Creative Engine](https://github.com/ModusCreateOrg/creative-engine) is the game engine developed by Modus Create. It implements LibXMP, SDL2, ESP-IDF (Audio, Video and Input drivers).\
 [LibXMP](http://xmp.sourceforge.net/) is a fantastic cross-platform library for playing music using the [Xtended Module (XM)](https://en.wikipedia.org/wiki/XM_(file_format)) format and also has additional functionality to play sound effects.\
  
