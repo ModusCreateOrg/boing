@@ -1,7 +1,11 @@
-
-# Developing
+# Developer guide
 This document's purpose is to provide a high-level understanding of how Boing works. Programmers wishing to get involved should review our [contribution](./md/CONTRIBUTING.md) guidelines as well as have a decent understanding of C++ and build tools. Having some knowledge of SOCs, such as the [ESP32-WROVER](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-wrover-kit.html) would also be very helpful. 
 Boing is a cross-platform a block-breaking game developed by [Modus Create](https://moduscreate.com) and its sole purpose is to demonstrate how to use [creative engine](https://github.com/moduscreateorg/creative-engine). Boing runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux.
+
+
+*Note* We've standardized on ESP-IDF version 3.2:
+https://github.com/espressif/esp-idf/releases/tag/v3.2
+https://docs.espressif.com/projects/esp-idf/en/v3.2/
 
 
 ## How to Play
