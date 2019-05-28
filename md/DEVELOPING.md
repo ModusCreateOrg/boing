@@ -57,7 +57,7 @@ Let's clone the Boing and Creative Engine repos:
 ## Install dependencies
 
 ### macOS
-- [ ] Install [XCode](https://developer.apple.com/xcode/)
+- [ ] Install [XCode](https://developer.apple.com/xcode/) CLI tools
     
 ```
 xcode-select --install
