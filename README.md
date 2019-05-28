@@ -1,14 +1,13 @@
-[![Modus Create](./readme-images/modus.logo.svg)](https://moduscreate.com)
+[![Modus Create](./md/img/modus.logo.svg)](https://moduscreate.com)
 
 # Brickout [![Build Status](https://ci.moduscreate.com/buildStatus/icon?job=ModusCreateOrg/genus/master&build=1)](https://ci.moduscreate.com/job/ModusCreateOrg/job/genus/job/master/1/)
 
-Brickout is a cross-platform a block-breaking game developed by [Modus Create](https://moduscreate.com) and its sole puprose is to demonstrate how to use [creative engine](https://github.com/moduscreateorg/creative-engine). Brickout runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux.
-
+Brickout is a cross-platform a block-breaking game developed by [Modus Create](https://moduscreate.com) and its sole purpose is to demonstrate how to use [creative engine](https://github.com/moduscreateorg/creative-engine). Brickout runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux.
 
 ## How to Play
 Biong is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
 
-![brickout-gameplay.gif](md/img/boing-gameplay.gif)
+![brickout-gameplay.gif](./md/img/boing-gameplay.gif)
 
 
 ## Getting started
