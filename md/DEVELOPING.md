@@ -9,7 +9,7 @@ https://docs.espressif.com/projects/esp-idf/en/v3.2/
 
 
 ## How to Play
-Genus is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
+Boing is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
 
 ![boing-gameplay.gif](./img/boing-gameplay.gif)
 
@@ -89,13 +89,9 @@ make -j 4                      # Four threads. Change to whatever you wish for f
 ./boing
 ```
 ### Raspberry Pi
-
-Genus is tested on Raspbian Stretch (9.6) on the Raspberry Pi 2B+ and 3B+. You will need about 2GB of space in /tmp and about 2GB of space in /home to build this.
+Boing is tested on Raspbian Stretch (9.6) on the Raspberry Pi 2B+ and 3B+. You will need about 2GB of space in /tmp and about 2GB of space in /home to build this.
 
 The game will run very slowly without enabling the OpenGL desktop driver. You can enable it by running `sudo raspbi-config` and choosing _Advanced Options / GL Driver / GL (Full KMS)_. The game will run very slowly without enabling the OpenGL desktop driver. You can enable it by running `sudo raspbi-config` and choosing _Advanced Options / GL Driver / GL (Full KMS)_. See this site for complete instructions:  [https://eltechs.com/how-to-enable-opengl-on-raspberry-pi/](https://eltechs.com/how-to-enable-opengl-on-raspberry-pi/).
-
-
-
 
 
 
