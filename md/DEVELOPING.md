@@ -34,9 +34,9 @@ We're going to get setup in three phases:
 ## Clone Boing and Creative Engine
 The first thing we need to is create a folder that will contain Boing and Creative engine. When we're done, the folder struction will look similar to the following.
 
-    projects/
+    boing-game/
         |-creative-engine/      # Source Creative Engine
-        |-boing/             # Source for Boing
+        |-boing/                # Source for Boing
             |-creative-engine/  # Symbolic Link to the above directory
 
 Let's clone the Boing and Creative Engine repos:
