@@ -2,12 +2,6 @@
 This document's purpose is to provide a high-level understanding of how Boing works. Programmers wishing to get involved should review our [contribution](./md/CONTRIBUTING.md) guidelines as well as have a decent understanding of C++ and build tools. Having some knowledge of SOCs, such as the [ESP32-WROVER](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-wrover-kit.html) would also be very helpful. 
 Boing is a cross-platform a block-breaking game developed by [Modus Create](https://moduscreate.com) and its sole purpose is to demonstrate how to use [creative engine](https://github.com/moduscreateorg/creative-engine). Boing runs on the [ODROID GO](https://www.hardkernel.com/shop/odroid-go/), macOS and Linux.
 
-
-*Note* We've standardized on ESP-IDF version 3.2:
-https://github.com/espressif/esp-idf/releases/tag/v3.2
-https://docs.espressif.com/projects/esp-idf/en/v3.2/
-
-
 ## How to Play
 Boing is a simple game where you have to outsmart your AI opponent and land the ball behind his paddle. 
 
@@ -107,7 +101,19 @@ The game will run very slowly without enabling the OpenGL desktop driver. You ca
 
 
 ## ODROID GO/ESP32
-- [ ] Follow the [setup-toolchain](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/#setup-toolchain) instructions for the ESP IDF. Be sure to follow them thorougly! 
+- [ ] The following script replicates the steps to install the related ESP-IDF software. See the [setup-toolchain](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/#setup-toolchain) instructions details.
+ 
+__Note:__ We've standardized on ESP-IDF version 3.2, and have deviated a bit from the install instructions.
+
+```
+# To install ESP-IDF, please execute the following command:
+# Assumes you don't have an esp directory in your profile directory
+bash scripts/download-esp-idf.sh
+
+```
+To proceed further, __make sure__ your [$IDF_PATH](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/add-idf_path-to-profile.html#linux-and-macos) environment variable is set.
+
+
 - [ ] Stage the appropriate SDK config file
 ```
 # Linux ONLY
