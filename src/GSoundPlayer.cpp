@@ -13,7 +13,8 @@
 
 GSoundPlayer gSoundPlayer;
 
-#define MUSIC_VOLUME (.3)
+#define MUSIC_VOLUME (.20)
+#define SFX_VOLUME (.35)
 
 void GSoundPlayer::Init(TUint8 aNumberFxChannels, TUint8 aNumberFxSlots) {
   BSoundPlayer::Init(aNumberFxChannels, aNumberFxSlots);
@@ -45,17 +46,11 @@ void GSoundPlayer::Init(TUint8 aNumberFxChannels, TUint8 aNumberFxSlots) {
     FreeMem(slot);
   }
 
-
   PlayMusic(EMPTYSONG_XM);
-#ifdef ENABLE_OPTIONS
-  SetMusicVolume(gOptions->music);
-  SetEffectsVolume(gOptions->sfx);
-  MuteMusic(gOptions->muted);
-#else
+
   SetMusicVolume(MUSIC_VOLUME);
-  SetEffectsVolume(.75);
+  SetEffectsVolume(SFX_VOLUME);
   MuteMusic(false);
-#endif
 }
 
 TBool GSoundPlayer::PlayMusic(TInt16 aResourceId) {
@@ -63,11 +58,7 @@ TBool GSoundPlayer::PlayMusic(TInt16 aResourceId) {
 //  printf("%s %i\n", __PRETTY_FUNCTION__, aResourceId);
   // BSoundPlayer::PlayMusic un-mutes the music
   // We have to re-mute it in case of mute == true
-#ifdef ENABLE_OPTIONS
   MuteMusic(gOptions->muted);
-#else
-  MuteMusic(false);
-#endif
 
   return music;
 }
@@ -100,13 +91,8 @@ TBool GSoundPlayer::LoadEffects() {
     LoadEffect(mEffectsList[i], i);
   }
 
-#ifdef ENABLE_OPTIONS
-  SetMusicVolume(gOptions->music);
-  SetEffectsVolume(gOptions->sfx);
-#else
   SetMusicVolume(MUSIC_VOLUME);
-  SetEffectsVolume(MUSIC_VOLUME);
-#endif
+  SetEffectsVolume(SFX_VOLUME);
   return ETrue;
 }
 
